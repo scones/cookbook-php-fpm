@@ -19,7 +19,7 @@
 
 define :php_fpm_pool, :template => "pool.conf.erb", :enable => true do
 
-  pool_name = params[:name]
+  pool_name = params[:pool_name] || params[:name]
 
   conf_file = "#{node['php-fpm']['pool_conf_dir']}/#{pool_name}.conf"
 
